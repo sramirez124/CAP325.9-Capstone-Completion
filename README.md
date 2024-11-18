@@ -2,7 +2,7 @@
   <h1>Herculean Task App</h1>
   <div>
     <div>
-      <p>You can read my notes during development here: <a href = "https://github.com/sramirez124/CAP325.9-Capstone-Completion/wiki/Dev-Journal">Dev Journal</a></p>
+      <p>You can read my notes during development here: <a href = "https://github.com/sramirez124/CAP325.9-Capstone-Completion/wiki">Dev Journal</a></p>
     </div>
     <div>
       <p>You can follow my Jira Board here: <a href = "https://herculestask.atlassian.net/jira/software/projects/SCRUM/boards/1">Hercules Task Sprint Board</a></p>
