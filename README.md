@@ -1,9 +1,13 @@
 <div align="center">
   <h1>Herculean Task App</h1>
   <div>
-    <a href = "https://github.com/sramirez124/CAP325.9-Capstone-Completion/wiki/Dev-Journal"><p>You can read my notes during development here: </p>Dev Journal</a>
-    <br>
-    <a href = "https://herculestask.atlassian.net/jira/software/projects/SCRUM/boards/1"><p>You can follow my Jira Board here: </p>Hercules Task Sprint Board</a>
+    <div>
+      <p>You can read my notes during development here: <a href = "https://github.com/sramirez124/CAP325.9-Capstone-Completion/wiki/Dev-Journal">Dev Journal</a></p>
+    </div>
+    <div>
+      <p>You can follow my Jira Board here: <a href = "https://herculestask.atlassian.net/jira/software/projects/SCRUM/boards/1">Hercules Task Sprint Board</a></p>
+    </div>
+    
   </div>
   <h2>What is Herculean Task App?</h2>
   <p> Herculean Task App is a task app that was developed for capstone project at Per Scholas for a MERN Fullstack developer course that I am currently taking and will be graduate from late November.
