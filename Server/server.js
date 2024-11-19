@@ -9,6 +9,10 @@ const PORT = process.env.PORT
 await mongoose.connect(process.env.ATLAS_URI)
 console.log("Connected to MongoDB!")
 
+// Pulling in Models
+import Task from './Models/Task.js'
+import User from './Models/User.js'
+
 app.use(express.json())
 
 app.get('/', (req, res) => {
