@@ -57,6 +57,16 @@ app.get('/users/:id/tasks', async (req, res) => {
  * POST Routes
  */
 
+// Create User
+app.post('/users', async (req, res) => {
+    try {
+      const newUser = await User.create(req.body)
+      res.status(200).json(newUser)
+    } catch (err) {
+      res.send(err).status(400)
+    }
+  })
+
 // Creat a Task
 app.post('/tasks/:userId', async (req, res) => {
     try{

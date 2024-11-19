@@ -20,6 +20,12 @@ const userSchema = new Schema({
         unique: true,
         message: "Email required",
     },
+    tasks: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Task",
+        },
+    ],
 });
 
 export default model("User", userSchema);
