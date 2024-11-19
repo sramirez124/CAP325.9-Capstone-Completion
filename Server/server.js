@@ -19,6 +19,41 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
+/**
+ * GET Routes
+ */
+
+// USER ROUTES
+app.get('/users', async (req, res) => {
+    try{
+        const users = await User.find()
+        res.status(200).json(users)
+    } catch (error) {
+        res.status(400).send(error)
+    }
+})
+
+// GET by ID
+app.get('/users/:id', async (req, res) => {
+    try{
+        const user = await User.findById(req.params.id)
+        res.status(200).json(user)
+    } catch (error) {
+        res.status(400).send(error)
+    }
+})
+
+// GET Users Task
+app.get('/users/:id/tasks', async (req, res) => {
+    try{
+        const tasks = await Task.find({user: req.params.id})
+        res.status(200).json(tasks)
+    } catch (error) {
+        res.status(400).send(error)
+    }
+})
+
+
 // Error Handling
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500
