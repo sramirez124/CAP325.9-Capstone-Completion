@@ -5,7 +5,7 @@
       <p>You can read my notes during development here: <a href = "https://github.com/sramirez124/CAP325.9-Capstone-Completion/wiki">Dev Journal</a></p>
     </div>
     <div>
-      <p>You can follow my Jira Board here: <a href = "https://herculestask.atlassian.net/jira/software/projects/SCRUM/boards/1">Hercules Task Sprint Board</a></p>
+      <p>You can follow my Jira Board here: <a href = "https://github.com/users/sramirez124/projects/4/views/1?system_template=kanban">Hercules Task Sprint Board</a></p>
     </div>
     
   </div>
