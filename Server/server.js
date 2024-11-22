@@ -1,5 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import axios from 'axios'
 import cors from 'cors'
 import "dotenv/config"
 
@@ -84,10 +85,9 @@ app.post('/users/login', async (req, res) => {
             if (user.password === password) {
                 res.status(200).json("Success")
             } else {
-                res.status(400).send('Incorrect Information')
+                res.status(400).send("Incorrect Information")
             }
         }
-        res.status(200).json(user)
     } catch (error) {
         res.status(400).send(error)
     }

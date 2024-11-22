@@ -10,8 +10,11 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.post('http://localhost:3000/users/login', {email, password})
-        .then(result => console.log(result.data))
-        navigate('/Home')
+        .then(result => {
+            console.log(result.data)
+            if (result.data === "Success") {
+                navigate('/Home')
+            }})
         .catch(error => console.log(error))
     }
 
@@ -19,7 +22,7 @@ function Login() {
         <div>
             <div>
                 <h2>Welcome Back!</h2>
-                <form action="">
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="email">
                             <strong>Email</strong>
