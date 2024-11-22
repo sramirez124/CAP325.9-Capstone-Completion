@@ -94,21 +94,15 @@ app.post('/users/login', async (req, res) => {
 })
 
 // Create a Task
-app.post('/tasks/:userId', async (req, res) => {
+app.post('/tasks', async (req, res) => {
     try{
-        const user = await User.findById(req.params.userId)
-        if (!user) {
-            res.status(400).send('User not found')
-            return
-        }
         const task = new Task(req.body)
-        task.userId = user._id
-
-        user.tasks.push(task._id)
-
-        await task.save()
-        await user.save()
-
+        Task.create({
+            task: task,
+            description: description,
+            priority: priority,
+            dueDate: dueDate
+        })
         res.status(201).json(task)
     } catch (error) {
         res.send(error).status(400)
