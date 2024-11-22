@@ -1,19 +1,32 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 function Signup() {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('http://localhost:3000/users', {name, email, password})
+        .then(result => console.log(result.data))
+        .catch(error => console.log(error))
+    }
+
     return (
         <div>
             <div>
                 <h2>Sign Up</h2>
-                <form action="">
+                <form onSubmit={handleSubmit}>
                     <div>
-                        <label htmlFor="email">
+                        <label htmlFor="name">
                             <strong>Name</strong>
                         </label>
                         <input type="text" 
                         placeholder='Enter Name Here'
                         name = "name"
                         className='form-name'
+                        onChange={(e) => setName(e.target.value)}
                         />
                     </div>
                     <div>
@@ -24,6 +37,7 @@ function Signup() {
                         placeholder='Enter Email Here'
                         name = "email"
                         className='form-email'
+                        onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div>
@@ -34,6 +48,7 @@ function Signup() {
                         placeholder='Enter Password Here'
                         name = "password"
                         className='form-password'
+                        onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                     <button type='submit' className='form-submit-button'>
