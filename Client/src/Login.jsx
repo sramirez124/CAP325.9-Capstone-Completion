@@ -9,7 +9,7 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3000/users/login', {email, password})
+        axios.post('http://localhost:3000/users/login/id', {email, password})
         .then(result => {
             console.log(result.data)
             if (result.data === "Success") {

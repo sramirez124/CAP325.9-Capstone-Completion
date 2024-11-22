@@ -37,8 +37,8 @@ app.get('/users', async (req, res) => {
     }
 })
 
-// GET by ID
-app.get('/users/:id', async (req, res) => {
+// GET by Task
+app.get('/task', async (req, res) => {
     try{
         const user = await User.findById(req.params.id)
         res.status(200).json(user)
@@ -96,13 +96,14 @@ app.post('/users/login', async (req, res) => {
 // Create a Task
 app.post('/tasks', async (req, res) => {
     try{
-        const task = new Task(req.body)
+        const {title, description, priority, dueDate} = req.body
         Task.create({
-            task: task,
+            title: title,
             description: description,
             priority: priority,
             dueDate: dueDate
         })
+        const newTask = User.tasks.push(Task)
         res.status(201).json(task)
     } catch (error) {
         res.send(error).status(400)
