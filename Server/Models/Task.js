@@ -19,5 +19,4 @@ const taskSchema = new Schema({
     }
 })
 
-const TaskModel = model('Task', taskSchema)
-export default TaskModel
+export default model("Task", taskSchema);

@@ -61,7 +61,7 @@ app.get('/users/:id/tasks', async (req, res) => {
  */
 
 // Create User
-app.post('/users', async (req, res) => {
+app.post('/users/signup', async (req, res) => {
     try {
       const newUser = await User.create(req.body)
       res.status(200).json(newUser)
@@ -69,6 +69,29 @@ app.post('/users', async (req, res) => {
       res.send(err).status(400)
     }
   })
+
+// Login Page
+app.post('/users/login', async (req, res) => {
+    try {
+        const {email, password} = req.body
+        const user = await User.findOne({email})
+        if (!user) {
+            res.status(400).send('User not found')
+            return
+        } 
+
+        if (user){
+            if (user.password === password) {
+                res.status(200).json("Success")
+            } else {
+                res.status(400).send('Incorrect Information')
+            }
+        }
+        res.status(200).json(user)
+    } catch (error) {
+        res.status(400).send(error)
+    }
+})
 
 // Create a Task
 app.post('/tasks/:userId', async (req, res) => {

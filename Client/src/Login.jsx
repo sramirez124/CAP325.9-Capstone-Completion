@@ -1,6 +1,20 @@
 import { useState } from 'react'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const navigate = useNavigate()
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('http://localhost:3000/users/login', {email, password})
+        .then(result => console.log(result.data))
+        navigate('/Home')
+        .catch(error => console.log(error))
+    }
+
     return (
         <div>
             <div>
@@ -14,6 +28,7 @@ function Login() {
                         placeholder='Enter Email Here'
                         name = "email"
                         className='form-email'
+                        onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div>
@@ -24,6 +39,7 @@ function Login() {
                         placeholder='Enter Password Here'
                         name = "password"
                         className='form-password'
+                        onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                     <button type='submit' className='form-submit-button'>
