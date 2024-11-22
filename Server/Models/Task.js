@@ -9,18 +9,21 @@ const taskSchema = new Schema({
     description: {
         type: String,
         required: false,
-        message: "Description required",
     },
     priority: {
-        type: String,
+        type: Number,
         required: false,
-        message: "Priority required",
     },
     dueDate: {
         type: Date,
         required: false,
-        message: "Due Date required",
-    }
+    },
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+    },
+    
 })
 
 export default model("Task", taskSchema);

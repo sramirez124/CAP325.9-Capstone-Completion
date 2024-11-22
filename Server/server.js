@@ -83,7 +83,7 @@ app.post('/users/login', async (req, res) => {
 
         if (user){
             if (user.password === password) {
-                res.status(200).json("Success")
+                res.status(200).json(`${user._id}`)
             } else {
                 res.status(400).send("Incorrect Information")
             }
@@ -96,15 +96,20 @@ app.post('/users/login', async (req, res) => {
 // Create a Task
 app.post('/tasks', async (req, res) => {
     try{
-        const {title, description, priority, dueDate} = req.body
+        const {title, description, priority, dueDate, id} = req.body
         Task.create({
             title: title,
             description: description,
             priority: priority,
-            dueDate: dueDate
+            dueDate: dueDate,
+            userId: id
         })
-        const newTask = User.tasks.push(Task)
-        res.status(201).json(task)
+        // NOT WORKING
+        // const user = await User.findById(id)
+        // user.tasks.push(req.body)
+        // await user.save()
+
+        res.status(201).json(task)        
     } catch (error) {
         res.send(error).status(400)
     }

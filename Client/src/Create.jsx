@@ -1,15 +1,18 @@
 import { useState} from 'react'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 function Create() {
+  let id = useParams().id
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [priority, setPriority] = useState('')
   const [dueDate, setDueDate] = useState('')
+
   
   const handleAdd = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3000/tasks', {title, description, priority, dueDate})
+    axios.post('http://localhost:3000/tasks', {title, description, priority, dueDate, id})
     .then(result => console.log(result.data))
     .catch(error => console.log(error))
   }
