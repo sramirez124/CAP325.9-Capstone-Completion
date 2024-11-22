@@ -1,11 +1,11 @@
 import { Schema, model } from "mongoose";
 
 const userSchema = new Schema({
-    username: {
+    email: {
         type: String,
         required: true,
         unique: true,
-        message: "Username required",
+        message: "Email required",
     },
     password: {
         type: String,
@@ -13,12 +13,6 @@ const userSchema = new Schema({
         maxLength: 20,
         required: true,
         message: "Password required",
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        message: "Email required",
     },
     tasks: [
         {

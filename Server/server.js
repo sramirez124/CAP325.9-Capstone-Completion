@@ -70,7 +70,7 @@ app.post('/users', async (req, res) => {
     }
   })
 
-// Creat a Task
+// Create a Task
 app.post('/tasks/:userId', async (req, res) => {
     try{
         const user = await User.findById(req.params.userId)

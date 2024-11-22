@@ -18,3 +18,6 @@ const taskSchema = new Schema({
         required: false,
     }
 })
+
+const TaskModel = model('Task', taskSchema)
+export default TaskModel
