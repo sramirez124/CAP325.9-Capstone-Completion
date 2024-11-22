@@ -1,9 +1,12 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import cors from 'cors'
 import "dotenv/config"
 
 const app = express()
 const PORT = process.env.PORT
+app.use(express.json())
+app.use(cors())
 
 // connect to db
 await mongoose.connect(process.env.ATLAS_URI)
@@ -13,7 +16,7 @@ console.log("Connected to MongoDB!")
 import Task from './Models/Task.js'
 import User from './Models/User.js'
 
-app.use(express.json())
+
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
