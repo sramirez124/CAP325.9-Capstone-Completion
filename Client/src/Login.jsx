@@ -1,21 +1,11 @@
 import { useState } from 'react'
 
-function Signup() {
+function Login() {
     return (
         <div>
             <div>
-                <h2>Sign Up</h2>
+                <h2>Welcome Back!</h2>
                 <form action="">
-                    <div>
-                        <label htmlFor="email">
-                            <strong>Name</strong>
-                        </label>
-                        <input type="text" 
-                        placeholder='Enter Name Here'
-                        name = "name"
-                        className='form-name'
-                        />
-                    </div>
                     <div>
                         <label htmlFor="email">
                             <strong>Email</strong>
@@ -37,13 +27,13 @@ function Signup() {
                         />
                     </div>
                     <button type='submit' className='form-submit-button'>
-                        Sign Up
+                        Login
                     </button>
                 </form>
-                <p>Already have an account? <a href="/Login">Login</a></p>
+                <p>Don't have an account? <a href="/Signup">Sign Up Here</a></p>
             </div>
         </div>
     )
 }
 
-export default Signup
+export default Login
