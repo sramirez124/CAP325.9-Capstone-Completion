@@ -62,7 +62,7 @@ function Create() {
                         </label>
                     </div>
                 </form>
-      <button type="submit" onClick={handleAdd}>Add</button>
+      <button type="submit" className='add-button' onClick={handleAdd}>Add</button>
 
       
     </div>
