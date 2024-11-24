@@ -1,15 +1,21 @@
 import plus from "./assets/plus.png"
+import CreateModal from "./Components/CreateModal"
+import { useState } from "react"
 import "./App.css"
 
 function Sidebar() {
+    const [openModal, setOpenModal] = useState(false);
+
     return (
         <div className='sidebar'>
             <div className="sidebar-section">
             <h3 className="sidebar-title">
                 <strong>Projects</strong>
-                <a href="">
-                    <img className="plus" src={plus} alt="" />
-                </a>
+                <button onClick={() => setOpenModal(true)}>
+                    <a href="">
+                    <img className="plus" src={plus} alt="" /></a>
+                    <CreateModal open={openModal} setOpenModal={setOpenModal}/>
+                </button>
             </h3>
                 <div className="sidebar-list">
                     <h3>Project 1</h3>

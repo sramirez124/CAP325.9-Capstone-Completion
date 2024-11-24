@@ -1,7 +1,7 @@
 import { useState} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import GetTask from './Components/GetTask'
+import CreateModal from './Components/CreateModal'
 
 function Create() {
   let id = useParams().id

@@ -61,10 +61,15 @@
 
 .sidebar-title{
     border-bottom: 2px solid var(--primary-text-color);
+    margin: 5px;
 }
 
 .plus{
     align-self: right;
     width: 25px;
     height: 25px;
+}
+
+.sidebar-list{
+    padding-bottom: 20px;
 }
