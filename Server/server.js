@@ -20,7 +20,7 @@ import User from './Models/User.js'
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    redirect('/login')
 })
 
 /**

@@ -1,10 +1,9 @@
 import Home from './Home'
 import Signup from './Signup'
 import Login from './Login'
-import Toggle from './assets/Components/Toggle'
+import Toggle from './Components/Toggle'
 import useLocalStorage from 'use-local-storage'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import { useState } from 'react'
 import './App.css'
 
 function App() {
