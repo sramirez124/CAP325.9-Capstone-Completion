@@ -49,12 +49,14 @@ app.get('/task', async (req, res) => {
 
 // GET Users Task
 app.get('/users/:id/tasks', async (req, res) => {
-    try{
-        const tasks = await Task.find({user: req.params.id})
-        res.status(200).json(tasks)
-    } catch (error) {
-        res.status(400).send(error)
-    }
+    const id = req.params.id;
+  try {
+    const tasks = await Task.find({ userId: id });
+    res.json(tasks);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error fetching tasks' });
+  }
 })
 
 /**
@@ -97,20 +99,15 @@ app.post('/users/login', async (req, res) => {
 app.post('/tasks', async (req, res) => {
     try{
         const {title, description, priority, dueDate, id} = req.body
-        Task.create({
+        const newTask = await Task.create({
             title: title,
             description: description,
             priority: priority,
             dueDate: dueDate,
             userId: id
         })
-        // NOT WORKING
-        // const user = await User.findById(id)
-        // user.tasks.push(req.body)
-        // await user.save()
-        // Needs to be done today
-
-        res.status(201).json(task)        
+        const user = await User.findByIdAndUpdate(id, { $push: { tasks: newTask._id } })
+        res.status(201).json(newTask)        
     } catch (error) {
         res.send(error).status(400)
     }
