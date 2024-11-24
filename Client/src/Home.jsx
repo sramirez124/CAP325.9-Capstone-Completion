@@ -16,7 +16,7 @@ function Home() {
     }, [id])
 
     return (
-        <div className="App">
+        <div className="App" >
             <h2 className='title'>Herculean Task List</h2>
             <Create />
             {
