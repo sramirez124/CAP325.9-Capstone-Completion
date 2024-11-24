@@ -12,9 +12,19 @@ function Home() {
     return (
         <div className="App" >
             <h2 className='title'>Herculean Task List</h2>
-            {/* <Create /> */}
-            <Sidebar />
-            <GetTask id={id} />
+            <div className='app-display'>
+                <div className='app-create'>
+                    <Create />
+                </div>
+
+                <div className='app-task'>
+                    <GetTask id={id} />
+                </div>
+            </div>
+            
+            {/* This did not work at all */}
+            {/* <Sidebar /> */}
+            
         </div>
     );
 }

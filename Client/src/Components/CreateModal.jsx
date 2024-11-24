@@ -1,17 +1,29 @@
-import { useState } from 'react'
-import Create from '../Create'
-import "../App.css"
+import React, { useState } from 'react';
+import Create from '../Create';
 
-const CreateModal = ({ open, close }) => {
-    if (!open || !close) return null;
-    
-    return (
-        <div className='overlay'>
-            <div className='create-modal'>
-                <Create />
-            </div>
+const Modal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <div>
+      {isOpen && (
+        <div className="modal-overlay" onClick={handleClose}>
+          <div className="modal-content">
+            <Create />
+            <button onClick={handleClose}>Close</button>
+          </div>
         </div>
-    );
-}
+      )}
+    </div>
+  );
+};
 
-export default CreateModal
+export default Modal;

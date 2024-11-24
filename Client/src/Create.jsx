@@ -1,7 +1,6 @@
 import { useState} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import CreateModal from './Components/CreateModal'
 
 function Create() {
   let id = useParams().id
@@ -15,6 +14,7 @@ function Create() {
     axios.post('http://localhost:3000/tasks', {title, description, priority, dueDate, id})
     .then(result => console.log(result.data))
     .catch(error => console.log(error))
+    setOpenModal(false);
   }
 
   return (
@@ -24,6 +24,7 @@ function Create() {
                         <label htmlFor="title">
                             <strong>Title</strong>
                         </label>
+                        <br />
                         <input type="text" 
                         placeholder='Enter Task Here'
                         name = "title"
@@ -62,14 +63,10 @@ function Create() {
                         </label>
                     </div>
                     <div>
-                    {/* <button type="submit" className='add-button' onClick={handleAdd}>Add</button> */}
+                    <p className='add-button' onClick={handleAdd}>Add Task</p>
                     </div>
                     
                 </form>
-      
-
-
-      
     </div>
   )
 }
