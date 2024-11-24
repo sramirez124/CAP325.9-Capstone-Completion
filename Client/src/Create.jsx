@@ -12,7 +12,6 @@ function Create() {
 
   
   const handleAdd = (e) => {
-    e.preventDefault()
     axios.post('http://localhost:3000/tasks', {title, description, priority, dueDate, id})
     .then(result => console.log(result.data))
     .catch(error => console.log(error))
@@ -62,8 +61,12 @@ function Create() {
                             </select>
                         </label>
                     </div>
+                    <div>
+                    {/* <button type="submit" className='add-button' onClick={handleAdd}>Add</button> */}
+                    </div>
+                    
                 </form>
-      <button type="submit" className='add-button' onClick={handleAdd}>Add</button>
+      
 
 
       

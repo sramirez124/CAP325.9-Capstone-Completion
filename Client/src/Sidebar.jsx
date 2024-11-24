@@ -11,10 +11,15 @@ function Sidebar() {
             <div className="sidebar-section">
             <h3 className="sidebar-title">
                 <strong>Projects</strong>
-                <button onClick={() => setOpenModal(true)}>
+
+                <button className="modal-button" 
+                    onClick={(e) => {
+                    setOpenModal(true); 
+                    e.preventDefault()}}>
+
                     <a href="">
                     <img className="plus" src={plus} alt="" /></a>
-                    <CreateModal open={openModal} setOpenModal={setOpenModal}/>
+                    <CreateModal open={openModal} close={() => setOpenModal(false)}/>
                 </button>
             </h3>
                 <div className="sidebar-list">

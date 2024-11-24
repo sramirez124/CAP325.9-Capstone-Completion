@@ -12,7 +12,7 @@ function Home() {
     return (
         <div className="App" >
             <h2 className='title'>Herculean Task List</h2>
-            <Create />
+            {/* <Create /> */}
             <Sidebar />
             <GetTask id={id} />
         </div>

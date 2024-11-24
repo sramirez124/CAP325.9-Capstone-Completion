@@ -23,6 +23,7 @@
     color: var(--primary-text-color);
 }
 
+
 .add-button{
     padding: 20px;
     border-radius: 10px;
@@ -64,12 +65,41 @@
     margin: 5px;
 }
 
+.sidebar-list{
+    padding-bottom: 20px;
+}
+
+.modal-button{
+    width: 30px;
+    height: 30px;
+    color: var(--card-color);
+}
+
 .plus{
-    align-self: right;
+    position:inherit;
     width: 25px;
     height: 25px;
 }
 
-.sidebar-list{
-    padding-bottom: 20px;
+.overlay{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+.create-modal{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--card-color);
+    border-radius: 10px;
+    width: 25%;
+    height: 40%;
+    background-color: var(--card-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
