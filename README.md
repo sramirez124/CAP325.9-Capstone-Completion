@@ -15,7 +15,7 @@
 
   <h2>Road Map</h2>
   <p>There are definitely more features I want to add and things I want to fix to work more efficiently</p>
-  <ul>
+  <ul align="center">
     <li> Allow users to delete task and connect it with DELETE </li>
     <li> Work on styling of the pages </li>
     <li> Allow users to make projects and store task to a certain project </li>
