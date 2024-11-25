@@ -33,15 +33,53 @@
     color: var(--secondary-text-color);
 }
 
-.task-list{
-    background-color: var(--card-color);
-    padding: 5px;
-    border: 2px solid var(--card-color);
-    border-radius: 10px;
-}
+/* .task-list{
+    
+} */
 
 .task{
+    position: relative;
+    background-color: var(--card-color);
     padding: 5px;
+    margin: 10px;
+    border: 2px solid var(--card-color);
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+}
+
+.task-title{
+    text-align: center;
+}
+
+/* .task-description{
+
+} */
+
+/* .task-priority{
+
+} */
+
+.form-description {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: left;
+  }
+
+.task-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.task-due-date{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 
 .app-display{

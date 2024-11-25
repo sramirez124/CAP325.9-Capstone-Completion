@@ -113,6 +113,15 @@ app.post('/tasks', async (req, res) => {
     }
 })
 
+app.delete('/tasks/:id', async (req, res) => {
+    try{
+        const task = await Task.findByIdAndDelete(req.params.id)
+        res.status(200).json(task)
+    } catch (error) {
+        res.status(400).send(error)
+    }
+})
+
 
 // Error Handling
 app.use((err, req, res, next) => {

@@ -17,10 +17,13 @@ function GetTask({id}) {
             tasks.length === 0 ? <p>You have no task!</p> :
             tasks.map(task => (
                 <div key={task._id} className='task'>
-                    <h3>{task.title}</h3>
-                    <p>{task.description}</p>
-                    <p>Priority: {task.priority}</p>
-                    <p>Due Date: {new Date(task.dueDate).toLocaleDateString()}</p>
+                    <div>
+                        <h3 className='task-title'>{task.title}</h3>
+                    </div>
+                    
+                    <p className='task-description'>{task.description}</p>
+                    <p className='task-priority'>Priority: {task.priority}</p>
+                    <p className='task-due-date'>Due Date: {new Date(task.dueDate).toLocaleDateString()}</p>
                 </div>
             ))
         }

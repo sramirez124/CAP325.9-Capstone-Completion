@@ -2,6 +2,7 @@ import { useState} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
+
 function Create() {
   let id = useParams().id
   const [title, setTitle] = useState('')
@@ -11,10 +12,10 @@ function Create() {
 
   
   const handleAdd = (e) => {
+    e.preventDefault()
     axios.post('http://localhost:3000/tasks', {title, description, priority, dueDate, id})
     .then(result => console.log(result.data))
     .catch(error => console.log(error))
-    setOpenModal(false);
   }
 
   return (
@@ -54,7 +55,8 @@ function Create() {
                         />
                     </div>
                     <div>
-                        <label htmlFor="priority">Priority
+                        <label htmlFor="priority">
+                            <strong>Priority</strong>
                             <select onChange={(e) => setPriority(e.target.value)}>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -63,7 +65,7 @@ function Create() {
                         </label>
                     </div>
                     <div>
-                    <p className='add-button' onClick={handleAdd}>Add Task</p>
+                    <button type='submit' className='add-button' onClick={handleAdd}>Add Task</button>
                     </div>
                     
                 </form>
