@@ -10,9 +10,16 @@
     
   </div>
   <h2>What is Herculean Task App?</h2>
-  <p> Herculean Task App is a task app that was developed for capstone project at Per Scholas for a MERN Fullstack developer course that I am currently taking and will be graduate from late November.
-      I always love trying out a new "task app" as I call them so I figured this would be a great time to make my own and see what I can do. The goal is pretty simple. I want my app to help people
-      save task for a project and keep things organized. I also want to give stats to people on their profile that shows how many projects they have completed and how many task they have completed. 
+  <p> Herculean Task List is an app that allows users to create their own task list, you can add a description of the task and a due date. I enjoy checking out new task list apps so I wanted to develop my       own. There are more features to come
   </p>
+
+  <h2>Road Map</h2>
+  <p>There are definitely more features I want to add and things I want to fix to work more efficiently</p>
+  <ul>
+    <li> Allow users to delete task and connect it with DELETE </li>
+    <li> Work on styling of the pages </li>
+    <li> Allow users to make projects and store task to a certain project </li>
+    <li> A profile that tracks users stats like how many projects/task they have completed </li>
+  </ul>
   
 </div>
