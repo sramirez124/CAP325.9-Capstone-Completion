@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Herculean Task App</h1>
+  <h1>Hercules Task App</h1>
   <div>
     <div>
       <p>You can read my notes during development here: <a href = "https://github.com/sramirez124/CAP325.9-Capstone-Completion/wiki">Dev Journal</a></p>
@@ -10,7 +10,7 @@
     
   </div>
   <h2>What is Herculean Task App?</h2>
-  <p> Herculean Task List is an app that allows users to create their own task list, you can add a description of the task and a due date. I enjoy checking out new task list apps so I wanted to develop my       own. There are more features to come
+  <p> Hercules Task List is an app that allows users to create their own task list, you can add a description of the task and a due date. I enjoy checking out new task list apps so I wanted to develop my       own. There are more features to come
   </p>
 
   <h2>Road Map</h2>
