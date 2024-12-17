@@ -50,10 +50,10 @@ app.get('/task', async (req, res) => {
 // GET Users Task
 app.get('/users/:id/tasks', async (req, res) => {
     const id = req.params.id;
-  try {
-    const tasks = await Task.find({ userId: id });
-    res.json(tasks);
-  } catch (error) {
+    try {
+        const tasks = await Task.find({ userId: id });
+        res.json(tasks);
+    } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error fetching tasks' });
   }
